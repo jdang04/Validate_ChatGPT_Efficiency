@@ -1,0 +1,221 @@
+<!DOCTYPE HTML>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="stylesheet1.css">
+  </head>
+
+  <body>
+    <div class="introduction">
+      <h1 style="text-align: center;"><b>ITEC 4020 - Group Project</b></h1>
+      <p>Hello fellow user, welcome to our website! This website is created as part of our group project for ITEC 4020. Here, you can find an interactive website that is interactive and user-friendly. We also implemeneted a ChatGPT efficiency evaluation tool that allows users to see how efficient chatGPT really is!
+    </div>
+
+    <div class="navbar">
+      <a href="index.html">Home</a>
+      <a href="#about" id="link-about">About Us</a>
+      <a href="#education" id="link-education">Education</a>
+      <a href="#experience" id="link-experience">Experience</a>
+      <a href="#project" id="link-project">Project</a>
+    </div>
+
+    <div id="main-section"></div>
+
+    <div id="chat-box"></div>
+
+    <div id="controls">
+      <input id="message-input" type="text" placeholder="Type a message..." />
+      <button id="send-btn">Send</button>
+    </div>
+
+    <div id="assistant-box">
+      <img id="assistant-character" src="Anteater.png" alt="Guide">
+      <div id="assistant-text"></div>
+    </div>
+
+    <div class="gpt-evaluation">
+      <h2>ChatGPT Efficiency Evaluation Tool</h2>
+      <p><b>Research Approach:</b> The tools and technolgies that were used for this evaluation are: MongoDB, Node.js, and ChatGPT API.</p>
+      <p>asda</p>
+      <p><b>Database Overview: The topics that ChatGPT will analyze are: History, Social Science, and Computer Security.</p>
+      <p><b>Results Section:/p>
+    </div>
+  
+    <!-- <script src="script.js"></script> -->
+    <script>
+      const chatBox = document.getElementById('chat-box');
+      const input = document.getElementById('message-input');
+      const sendBtn = document.getElementById('send-btn');
+
+      // Helper to add a message line to the chat box
+      function addMessage(text, who) {
+        const div = document.createElement('div');
+        div.className = `msg ${who}`;
+        div.textContent = (who === 'you' ? 'You: ' : 'Server: ') + text;
+        chatBox.appendChild(div);
+        chatBox.scrollTop = chatBox.scrollHeight;
+      }
+
+      // Connect to WebSocket server ws://${window.location.host} (same host & port as page)
+      const socket = new WebSocket("ws://localhost:3000");
+
+      socket.addEventListener('open', () => {
+        addMessage('Connected to WebSocket server.', 'server');
+      });
+
+      socket.addEventListener('message', (event) => {
+        try {
+          const data = JSON.parse(event.data);
+          if (data.from === 'server') {
+            addMessage(data.text, 'server');
+          } else {
+            addMessage(event.data, 'server');
+          }
+        } catch {
+          // if it's not JSON
+          addMessage(event.data, 'server');
+        }
+      });
+
+      socket.addEventListener('close', () => {
+        addMessage('Disconnected from server.', 'server');
+      });
+
+      socket.addEventListener('error',  (event) => {
+        console.error('Websocket error', event);
+      });
+
+      // Send message function
+      function sendMessage() {
+        const text = input.value.trim();
+        if (!text || socket.readyState !== WebSocket.OPEN) return;
+        // if (socket.readyState !== WebSocket.OPEN) {
+        //   addMessage('Cannot send: WebSocket is not connected.', 'server');
+        //   console.log('Socket not open, readyState =', socket.readyState);
+        //   return;
+        // }
+
+        // show it in the UI
+        addMessage(text, 'you');
+
+        // send to server
+        socket.send(text);
+
+        input.value = '';
+        input.focus();
+      }
+
+      //Click send button
+      sendBtn.addEventListener('click', sendMessage);
+
+      //Press Enter to send
+      input.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter') {
+          sendMessage();
+        }
+      });
+
+      const routes = {
+        about: () => `
+            <h2>Profile Section</h2>
+            <p>In this section, we will give you information about ourselves alongside our technical background.</p>
+                <p><b>Full Name:</b>Johnson Dang</p>
+                <p><b>About Me:</b> An Information Technology student studying at York University. I am currently in my fourth year. Throughout my time here, I have increased my knowledge around technology and my skills aswell.</p>
+                <p><b>Technical Background:</b> Languages that I can undestand to a high degree are: Python, Java, XML. Expertise in web content creation, layout design, and working inside databases.</p>
+
+                <p><b>Full Name:</b> Patrick Brian Colorina</p>
+                <p><b>About Me:</b> I am also an Information Technology student at the same school lmao</p>
+                <p><b>Technical Background:</b>Fill in</p>
+
+                <p><b>Full Name:</b>Fill in</p>
+                <p><b>About Me:</b>Fill in</p>
+                <p><b>Technical Background:</b>Fill in</p>
+                <b>If you want we could just add stock image online for an person since i dont feel like putting my pic on here</b>
+        `,
+        education: () => `
+            <h2>Education</h2>
+            <p>In this section, we will give you a rundown of our education.</p>
+                <p><b>Full Name:</b>Johnson Dang</p>
+                <p><b>Education:</b> An Information Technology student studying at York University. I am currently in my fourth year. Throughout my time here, I have increased my knowledge around technology and my skills aswell.</p>
+        
+                <p><b>Full Name:</b> Patrick Brian Colorina</p>
+                <p><b>Technical Background:</b>Fill in</p>
+
+                <p><b>Full Name:</b>Arsal</p>
+                <p><b>About Me:</b>Fill in</p>       
+        `,
+        experience: () => `
+            <h2>Education</h2>
+            <p>Insert education here</p>
+        `,
+        project: () => `
+            <h2>Projects</h2>
+            <p>List projects here</p>
+        `
+      };
+
+      const mainDiv = document.getElementById('main-section'); 
+
+      function setActiveLink(current) {
+        document.querySelectorAll('nav a').forEach(a => a.classList.remove('active'));
+        const link = document.getElementById('link-' + current);
+        if (link) link.classList.add('active');
+      }
+
+      function renderRoute() {
+        let hash = window.location.hash.substring(1) || 'about';
+
+        if (!routes[hash]) {
+          hash = 'about';
+          window.location.hash = '#about';
+        }
+
+        mainDiv.innerHTML = routes[hash]();
+
+        setActiveLink(hash);
+      }
+      
+      window.addEventListener('load', renderRoute);
+      window.addEventListener('hashchange', renderRoute);
+
+      // Animated Guide
+      const messages = [
+        "Hello! We are <strong>Group 4</strong>",
+        "Our project is the <strong>Auction Platform</strong> — a full three-tier system.",
+        "The frontend lets users browse, bid, and view receipts.",
+        "The backend handles authentication, users, items, and secure bidding.",
+        "Tip: API health check ensures your mid-tier is online!",
+        "Everything is deployed across <strong>Nginx + SpringBoot + MySQL</strong>."
+      ];
+
+      let index = 0;
+      let charIndex = 0;
+      const speed = 35; // typing speed
+
+      const box = document.getElementById("assistant-text");
+
+      function typeMessage() {
+        const message = messages[index];
+        if (charIndex < message.length) {
+          box.innerHTML = message.substring(0, charIndex + 1);
+          charIndex++;
+          setTimeout(typeMessage, speed);
+        } else {
+          setTimeout(() => {
+            index = (index + 1) % messages.length;
+            charIndex = 0;
+            typeMessage();
+          }, 3500); // wait 3.5 sec before next message
+        }
+      }
+
+      typeMessage();
+    </script>
+  </body>
+  <footer>
+    <div class="footer">
+      <p>Copyright &copy; ITEC 4020 Section A ChatGPT Efficiency Project 2025</p>
+    </div>
+  </footer>
+</html>
