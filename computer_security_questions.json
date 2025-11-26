@@ -1,0 +1,302 @@
+[
+  {
+    "question": "What are the port states determined by Nmap?",
+    "expected_answer": "Open, filtered, unfiltered",
+    "chatgpt_response": "",
+    "domain": "Computer Security"
+  },
+  {
+    "question": "Public key encryption is advantageous over Symmetric key Cryptography because of",
+    "expected_answer": "Key exchange",
+    "chatgpt_response": "",
+    "domain": "Computer Security"
+  },
+  {
+    "question": "Let F: K \\times R \\to MF:K×R→M be a secure PRF. For m \\in Mm∈M define E(k,m) = \\big[ r \\gets R,\\ \\text{output } \\big(r,\\ F(k,r) \\oplus m\\big)\\ \\big]E(k,m)=[r←R, output (r, F(k,r)⊕m) ] Is EE symantically secure under CPA?",
+    "expected_answer": "Yes, but only if R is large enough so r never repeats (w.h.p)",
+    "chatgpt_response": "",
+    "domain": "Computer Security"
+  },
+  {
+    "question": "____________________ is the anticipation of unauthorized access or break to computers or data by means of wireless networks.",
+    "expected_answer": "Wireless security",
+    "chatgpt_response": "",
+    "domain": "Computer Security"
+  },
+  {
+    "question": "Can a stream cipher have perfect secrecy?",
+    "expected_answer": "No, since the key is shorter than the message",
+    "chatgpt_response": "",
+    "domain": "Computer Security"
+  },
+  {
+    "question": "Three of the following are classic security properties; which one is not?",
+    "expected_answer": "Availability",
+    "chatgpt_response": "",
+    "domain": "Computer Security"
+  },
+  {
+    "question": "_______________ is a popular tool used for network analysis in multiprotocol diverse network.",
+    "expected_answer": "EtterPeak",
+    "chatgpt_response": "",
+    "domain": "Computer Security"
+  },
+  {
+    "question": "Which of the following is not an example of presentation layer issues?",
+    "expected_answer": "Weak or non-existent authentication mechanisms",
+    "chatgpt_response": "",
+    "domain": "Computer Security"
+  },
+  {
+    "question": "Which of the following are most vulnerable to injection attacks?",
+    "expected_answer": "SQL queries based on user input",
+    "chatgpt_response": "",
+    "domain": "Computer Security"
+  },
+  {
+    "question": "Buffer-overflow may remain as a bug in apps if __________ are not done fully.",
+    "expected_answer": "boundary checks",
+    "chatgpt_response": "",
+    "domain": "Computer Security"
+  },
+  {
+    "question": "Let I = (S,V)I=(S,V) be a MAC. Suppose S(k,m)S(k,m) is always 5 bits long. Can this MAC be secure?",
+    "expected_answer": "No, an attacker can simply guess the tag for messages",
+    "chatgpt_response": "",
+    "domain": "Computer Security"
+  },
+  {
+    "question": "A ___________ is a method in which a computer security mechanism is bypassed untraceable for accessing the computer or its information.",
+    "expected_answer": "backdoor",
+    "chatgpt_response": "",
+    "domain": "Computer Security"
+  },
+  {
+    "question": "The ______________ can cost you money, by sending text messages from your mobile phone numbers.",
+    "expected_answer": "SMS Trojan",
+    "chatgpt_response": "",
+    "domain": "Computer Security"
+  },
+  {
+    "question": "Which of the following is an authentication method?",
+    "expected_answer": "All of the above",
+    "chatgpt_response": "",
+    "domain": "Computer Security"
+  },
+  {
+    "question": "Why apps developed in languages like C, C++ is prone to Buffer-overflow?",
+    "expected_answer": "No string boundary checks in predefined functions",
+    "chatgpt_response": "",
+    "domain": "Computer Security"
+  },
+  {
+    "question": "___________________ is alike as that of Access Point (AP) from 802.11, & the mobile operators uses it for offering signal coverage.",
+    "expected_answer": "Base Transceiver Station",
+    "chatgpt_response": "",
+    "domain": "Computer Security"
+  },
+  {
+    "question": "How do you prevent SQL injection?",
+    "expected_answer": "Escape queries",
+    "chatgpt_response": "",
+    "domain": "Computer Security"
+  },
+  {
+    "question": "The __________ was a huge marketplace of Dark Web specifically famous for selling of illegal drugs & narcotics as well as you can find a wide range of other goods for sale.",
+    "expected_answer": "Silk Road",
+    "chatgpt_response": "",
+    "domain": "Computer Security"
+  },
+  {
+    "question": "Which of the following is a Wireless traffic Sniffing tool?",
+    "expected_answer": "Wireshark",
+    "chatgpt_response": "",
+    "domain": "Computer Security"
+  },
+  {
+    "question": "A special tool is necessary for entering the network which is _______________ that helps the anonymous internet users to access into the Tor’s network and use various Tor services.",
+    "expected_answer": "Tor browser",
+    "chatgpt_response": "",
+    "domain": "Computer Security"
+  },
+  {
+    "question": "In MD-5 the length of the message digest is",
+    "expected_answer": "128",
+    "chatgpt_response": "",
+    "domain": "Computer Security"
+  },
+  {
+    "question": "Why would a ping sweep be used?",
+    "expected_answer": "To identify live systems",
+    "chatgpt_response": "",
+    "domain": "Computer Security"
+  },
+  {
+    "question": "Let suppose a search box of an application can take at most 200 words, and you’ve inserted more than that and pressed the search button; the system crashes. Usually this is because of limited __________",
+    "expected_answer": "buffer",
+    "chatgpt_response": "",
+    "domain": "Computer Security"
+  },
+  {
+    "question": "The sub key length at each round of DES is__________",
+    "expected_answer": "56",
+    "chatgpt_response": "",
+    "domain": "Computer Security"
+  },
+  {
+    "question": "When does a buffer overflow occur, generally speaking?",
+    "expected_answer": "when a pointer is used to access memory not allocated to it",
+    "chatgpt_response": "",
+    "domain": "Computer Security"
+  },
+  {
+    "question": "In a _____________ attack, the extra data that holds some specific instructions in the memory for actions is projected by a cyber-criminal or penetration tester to crack the system.",
+    "expected_answer": "Buffer-overflow",
+    "chatgpt_response": "",
+    "domain": "Computer Security"
+  },
+  {
+    "question": "Which of the following styles of fuzzer is more likely to explore paths covering every line of code in the following program?",
+    "expected_answer": "Whitebox",
+    "chatgpt_response": "",
+    "domain": "Computer Security"
+  },
+  {
+    "question": "What does EXE do when the STP solver times out on a constraint query for a particular path?",
+    "expected_answer": "Assume that the query is not satisfiable and stop executing the path",
+    "chatgpt_response": "",
+    "domain": "Computer Security"
+  },
+  {
+    "question": "When a wireless user authenticates to any AP, both of them go in the course of four-step authentication progression which is called _____________",
+    "expected_answer": "4-way handshake",
+    "chatgpt_response": "",
+    "domain": "Computer Security"
+  },
+  {
+    "question": "Suppose that Alice and Bob sent confidential text messages to one another last month through an encrypted messaging system. Alice and Bob are worried that an adversary might compromise one of their computers today, while they are taking the 6.858 final exam, and would then be able to decrypt those messages. Which of the following security properties can address Alice and Bob’s concern?",
+    "expected_answer": "Forward secrecy",
+    "chatgpt_response": "",
+    "domain": "Computer Security"
+  },
+  {
+    "question": "The ______________ is categorized as an unknown segment of the Deep Web which has been purposely kept hidden & is inaccessible using standard web browsers.",
+    "expected_answer": "Dark web",
+    "chatgpt_response": "",
+    "domain": "Computer Security"
+  },
+  {
+    "question": "What is a nop sled",
+    "expected_answer": "It is a sequence of nops preceding injected shellcode, useful when the return address is unknown",
+    "chatgpt_response": "",
+    "domain": "Computer Security"
+  },
+  {
+    "question": "What was the first buffer overflow attack?",
+    "expected_answer": "Morris Worm",
+    "chatgpt_response": "",
+    "domain": "Computer Security"
+  },
+  {
+    "question": "A session symmetric key between two parties is used",
+    "expected_answer": "Only once",
+    "chatgpt_response": "",
+    "domain": "Computer Security"
+  },
+  {
+    "question": "A proxy rewall lters at the",
+    "expected_answer": "Application layer",
+    "chatgpt_response": "",
+    "domain": "Computer Security"
+  },
+  {
+    "question": "Which of the following is not a transport layer vulnerability?",
+    "expected_answer": "Unauthorized network access",
+    "chatgpt_response": "",
+    "domain": "Computer Security"
+  },
+  {
+    "question": "Which Nmap scan is does not completely open a TCP connection?",
+    "expected_answer": "SYN stealth scan",
+    "chatgpt_response": "",
+    "domain": "Computer Security"
+  },
+  {
+    "question": "What tool can be used to perform SNMP enumeration?",
+    "expected_answer": "IP Network Browser",
+    "chatgpt_response": "",
+    "domain": "Computer Security"
+  },
+  {
+    "question": "The digest created by a hash function is normally called a",
+    "expected_answer": "Modication detection code (MDC)",
+    "chatgpt_response": "",
+    "domain": "Computer Security"
+  },
+  {
+    "question": "What are the types of scanning?",
+    "expected_answer": "Network, vulnerability, and port",
+    "chatgpt_response": "",
+    "domain": "Computer Security"
+  },
+  {
+    "question": "Which of the following is not a block cipher operating mode?",
+    "expected_answer": "CBF",
+    "chatgpt_response": "",
+    "domain": "Computer Security"
+  },
+  {
+    "question": "Consider the paper Native Client: A Sandbox for Portable, Untrusted x86 Native Code by Yee et al. Ben Bitdiddle notes that NaCl uses Intel x86 segmentation to ensure that the sandboxed module does not read or write memory outside its own data area, and does not execute instructions outside its own code. Ben thinks that with these restrictions alone, executing the sandboxed module must be safe; that is, he thinks validation is not needed. Ben is wrong. Circle the types of x86 machine instructions that the validator always forbids in sandboxed code. Please ignore trampoline and springboard code.",
+    "expected_answer": "all instructions that modify segment state",
+    "chatgpt_response": "",
+    "domain": "Computer Security"
+  },
+  {
+    "question": "Which of the following is true of mutation-based fuzzing?",
+    "expected_answer": "It generates each different input by modifying a prior input",
+    "chatgpt_response": "",
+    "domain": "Computer Security"
+  },
+  {
+    "question": "Which of the following is not a security exploit?",
+    "expected_answer": "Authentication",
+    "chatgpt_response": "",
+    "domain": "Computer Security"
+  },
+  {
+    "question": "A digital signature needs a",
+    "expected_answer": "Public-key system",
+    "chatgpt_response": "",
+    "domain": "Computer Security"
+  },
+  {
+    "question": "What is Nmap?",
+    "expected_answer": "It is a scanner which works by injecting packets to a range of addresses, and inferring what hosts and services might be at those addresses, based on the responses",
+    "chatgpt_response": "",
+    "domain": "Computer Security"
+  },
+  {
+    "question": "What is a replay attack?",
+    "expected_answer": "The attacker resends a captured message, and the site accept its and responds in the attacker's favor",
+    "chatgpt_response": "",
+    "domain": "Computer Security"
+  },
+  {
+    "question": "Which among the following is the least strong security encryption standard?",
+    "expected_answer": "WEP",
+    "chatgpt_response": "",
+    "domain": "Computer Security"
+  },
+  {
+    "question": "The stack is memory for storing",
+    "expected_answer": "Local variables",
+    "chatgpt_response": "",
+    "domain": "Computer Security"
+  },
+  {
+    "question": "MIT’s Kerberos KDC server has a maximum ticket lifetime of 24 hours (for most user principals). What ensures that an expired Kerberos ticket can no longer be used?",
+    "expected_answer": "When a client connects to a server, the server compares the ticket’s expiration time to the server’s current clock, and refuses to authenticate the user if the ticket expiration time is in the past",
+    "chatgpt_response": "",
+    "domain": "Computer Security"
+  }
+]
