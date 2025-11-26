@@ -1,0 +1,142 @@
+.introduction{
+  text-align: center;
+  background-color: #CECFE2;
+  padding: 15px;
+}
+
+body {
+  background-color: #e3dddb;
+  padding: 50px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.navbar {
+  display:flex;
+  justify-content: center;
+  background-color: #333;
+  padding: 10px 0;
+}
+
+.navbar a {
+  float: center;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 20px;
+  text-decoration: none;
+  font-size: 17px;
+  margin: 0 10px;
+}
+
+.navbar a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+/* .navbar a.active {
+  background-color: #04AA6D;
+  color: white;
+} */
+
+#main-section {
+  background-color: white;
+  padding: 10px;
+  margin: 10px 0;
+}
+
+#chat-box {
+  width: 100%;
+  max-width: 500px;
+  height: 250px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  padding: 10px;
+  overflow-y: auto;
+  background: #f9f9f9;
+  margin-bottom: 10px;
+}
+
+.msg {
+  margin: 4px 0;
+  font-size: 14px;
+}
+
+.msg.you {
+  color: #2b7a0b;
+}
+
+.msg.server {
+  color: #0b5fa5;
+}
+
+#controls {
+  display: flex;
+  gap: 8px;
+  max-width: 500px;
+}
+
+#message-input {
+  flex: 1;
+  padding: 6px 8px;
+  font-size: 14px;
+}
+
+#send-btn {
+  padding: 6px 12px;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.gpt-evaluation {
+  background-color: white;
+  padding: 10px;
+  margin: 10px 0;
+}
+
+.footer {
+  background-color: #CECFE2;
+  color: black;
+  text-align: center;
+  padding: 10px;
+}
+
+/* animated guide style */
+
+#assistant-box {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 250px;
+  padding: 12px;
+  background: rgba(255, 255, 255, 0.85);
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  font-family: Arial, sans-serif;
+  animation: fadeIn 1s ease forwards;
+  display: flex;
+  gap: 10px;
+  z-index: 9999;
+}
+
+#assistant-character {
+  width: 80px;
+  height: 80px;
+  animation: float 3s infinite ease-in-out;
+}
+
+#assistant-text {
+  font-size: 14px;
+  line-height: 1.3em;
+  color: #333;
+  min-height: 50px;
+}
+
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-5px); }
+  100% { transform: translateY(0px); }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: scale(0.9); }
+  to   { opacity: 1; transform: scale(1); }
+}
