@@ -1,6 +1,3 @@
-//Darrell: Dynamic Assistant
-//Anthony: Websocket Integration
-
 const tips = [
     "Hello, I am your project assistant.",
     "Evaluate ChatGPT efficieny across different domains.",
