@@ -45,13 +45,6 @@
       function sendMessage() {
         const text = input.value.trim();
         if (!text || socket.readyState !== WebSocket.OPEN) return;
-        // if (socket.readyState !== WebSocket.OPEN) {
-        //   addMessage('Cannot send: WebSocket is not connected.', 'server');
-        //   console.log('Socket not open, readyState =', socket.readyState);
-        //   return;
-        // }
-
-        // show it in the UI
         addMessage(text, 'you');
 
         // send to server
@@ -134,4 +127,5 @@
       }
       
       window.addEventListener('load', renderRoute);
+
       window.addEventListener('hashchange', renderRoute);
