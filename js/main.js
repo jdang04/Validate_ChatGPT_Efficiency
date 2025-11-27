@@ -25,8 +25,8 @@ function rotateTips(){
 
 // Initialize on page load
 window.addEventListener("load", () => {
-    rotateTips(); // Show first tip immediately
-    if (tipInterval) clearInterval(tipInterval); // Clear any existing
+    rotateTips(); 
+    if (tipInterval) clearInterval(tipInterval); 
     tipInterval = setInterval(rotateTips, 4000);
 });
 
@@ -40,7 +40,6 @@ window.addEventListener("beforeunload", () => {
 let projectSocket;
 
 function initWebSocket() {
-    // Use secure WebSocket (wss://) in production, ws:// locally
     const protocol = window.location.protocol === 'https:' ? 'wss:' : 'ws:';
     const wsUrl = `${protocol}//${window.location.host}`;
     
@@ -53,7 +52,6 @@ function initWebSocket() {
     };
    
     projectSocket.onmessage = (event) => {
-    // Runs when server sends you data
         const box = document.getElementById("wsMessages");
         if(!box) return;
         box.innerHTML += `<p>${event.data}</p>`;
@@ -88,7 +86,6 @@ document.getElementById('wsSendBtn')?.addEventListener('click', () => {
     }
 })
 
-//listen for, fetch, and display results of the calculation
 document.getElementById('btnAdd')?.addEventListener('click', () => {
     const numA = document.getElementById('addA').value;
     const numB = document.getElementById('addB').value;
@@ -158,14 +155,10 @@ document.getElementById('btnClearDatabase')?.addEventListener('click', () => {
         console.log("deletion cancelled");
     }
 
-    // 2. Make a fetch() call to a new backend route (e.g., /api/clear-database)
-    // 3. Handle the response and display success/error message
-    // 4. Update the importResult element with the status
-    
+
     console.log('Clear database button clicked - implement your logic here!');
 });
 
-// Run evaluation button handler
 document.getElementById('btnRunEval')?.addEventListener('click', () => {
     const domain = document.getElementById('domainSelect')?.value || '';
     const limit = document.getElementById('limitInput')?.value || 5;
@@ -205,14 +198,10 @@ document.getElementById('btnRunEval')?.addEventListener('click', () => {
 let accuracyChart = null;
 let timeChart = null;
 
-   // Always show all domains, even if missing from backend
-// Draw charts function
 window.drawCharts = function(data) {
-    // Destroy existing charts if they exist
     if (accuracyChart) accuracyChart.destroy();
     if (timeChart) timeChart.destroy();
 
-    // Extract domains dynamically from backend data
     const domains = Object.keys(data.by_domain);
     const accuracies = domains.map(domain => data.by_domain[domain].accuracy);
     const avgTimes = domains.map(domain => data.by_domain[domain].avg_response_time);
@@ -337,7 +326,6 @@ window.drawCharts = function(data) {
         </div>
     `;
     
-    // Insert before the button
     const button = document.getElementById('btnLoadResults');
     const resultsSection = document.getElementById('results');
     if (resultsSection && button){
@@ -346,7 +334,6 @@ window.drawCharts = function(data) {
         resultsSection.insertBefore(summaryDiv, button);}
 }
 
-// Load Results button handler
 document.getElementById('btnLoadResults')?.addEventListener('click', () => {
     fetch('/api/results')
         .then(response => response.json())
